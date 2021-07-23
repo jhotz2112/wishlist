@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    <title>Practice Assessment 3</title>
+</head>
+<body>
+    <h1>Wish List Items:</h1>
+    <hr>
+    {% if not wishes %}
+        <p>There are no wishes yet!</p>
+        {% else %}
+        <ul>
+            {% for wish in wishs %}
+            <li>{{  wish.item }} - <a href="{% url 'wishes_delete' todo.id %}">X</a></li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    <hr>
+    <a href="{% url 'wishes_create' %}">Add a Wish</a>
+</body>
+</html>
